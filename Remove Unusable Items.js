@@ -13,8 +13,8 @@
     'use strict';
     if (document.getElementById('battle_top')) return;
     var node = document.querySelectorAll('.eqp,.eqb'),
-    	cSwitch,
-		cList,
+        cSwitch,
+        cList,
         i;
     for (i=0;i<node.length;i++) {
 		cList = node[i].classList;
