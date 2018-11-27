@@ -12,19 +12,21 @@
 (function() {
     'use strict';
     if (document.getElementById('battle_top')) return;
-    var node = document.querySelectorAll('.eqp,.eqb');
-    var addClass,
+    var node = document.querySelectorAll('.eqp,.eqb'),
+    	cSwitch,
+		cList,
         i;
     for (i=0;i<node.length;i++) {
-        if (node[i].classList.contains('txc') || node[i].classList.contains('txf')) {
-            if (node[i].classList.contains('tp'))
-                addClass=true;
+		cList = node[i].classList;
+        if (cList.contains('txc') || cList.contains('txf')) {
+            if (cList.contains('tp'))
+                cSwitch=true;
             node[i].remove();
             continue;
         }
-        if (addClass) {
-            node[i].classList.add('tp');
-            addClass=false;
+        if (cSwitch) {
+            cList.add('tp');
+            cSwitch=false;
         }
     }
 })();
