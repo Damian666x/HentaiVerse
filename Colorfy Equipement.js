@@ -49,6 +49,7 @@ Color "Custom" is for renamed potency tier 10 (MAX) items.
             inner=node[i].children[1].innerText;
         else
             inner=node[i].children[0].innerText;
+            if (inner.includes('Empty')) continue;
         for (color in colors)
             if (inner.includes(color)) {
                 node[i].classList.add(color);
